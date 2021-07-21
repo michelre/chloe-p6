@@ -32,12 +32,17 @@ header.appendChild(nav);
 const mainContainer = document.createElement("main");
 wrapper.appendChild(mainContainer);
 
+//Div photographers
+const photographerContainer = document.createElement("div");
+photographerContainer.classList.add("photographers");
+mainContainer.appendChild(photographerContainer);
+
 //Element - Photographers description
 const appendData = (foo) => {
 	for (let i = 0; i < foo.length; i++) {
 		const divPhotographer = document.createElement("div");
 		divPhotographer.classList.add("photographer");
-		mainContainer.appendChild(divPhotographer);
+		photographerContainer.appendChild(divPhotographer);
 
 		const namePhotographer = document.createElement("div");
 		namePhotographer.classList.add("photographer__name");
@@ -50,7 +55,7 @@ const appendData = (foo) => {
 		locationPhotographer.textContent = foo[i].city + ", " + foo[i].country;
 
 		const quotePhotographer = document.createElement("div");
-		quotePhotographer.classList.add("photographer__location");
+		quotePhotographer.classList.add("photographer__tagline");
 		divPhotographer.appendChild(quotePhotographer);
 		quotePhotographer.textContent = foo[i].tagline;
 
@@ -69,7 +74,7 @@ const heartIcon = document.createElement("img");
 heartIcon.classList.add("heart__icon");
 heartIcon.alt = "likes";
 
-const heartCompteur = document.createElement("span");
+const heartCompteur = document.createElement("div");
 heartCompteur.classList.add("heart__number");
 heartCompteur.textContent = 12;
 
@@ -89,19 +94,22 @@ document.querySelector(".heart__icon").addEventListener("click", incrementHeart)
 
 //Element - dropdown
 const divSelect = document.createElement("div");
+divSelect.classList.add("select");
 divSelect.innerHTML =
-	"<label for='order by'>Trier par</label> <select name='Order by' id='tri' class='button--select'> <option value='popularité'>Popularité</option> <option value='date'>Date</option><option value='titre'>Titre</option>";
+	"<label for='order by' class='select__label'>Trier par</label> <select name='Order by' id='tri' class='button button--select'> <option value='popularité'>Popularité</option> <option value='date'>Date</option><option value='titre'>Titre</option>";
 mainContainer.appendChild(divSelect);
 
 //Element - content button
 const contentButton = document.createElement("button");
 contentButton.classList.add("button--content");
+contentButton.classList.add("button");
 mainContainer.appendChild(contentButton);
 contentButton.textContent = "Passer au contenu";
 
 //Element - contact button
 const contactButton = document.createElement("button");
 contactButton.classList.add("button--contact");
+contactButton.classList.add("button");
 mainContainer.appendChild(contactButton);
 contactButton.textContent = "Contactez moi";
 

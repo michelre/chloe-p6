@@ -2,5 +2,85 @@
 @import "./utils/mixins";
 @import "./base/reset";
 @import "./base/typography";
-@import"./base/wrapper";
+@import "./base/wrapper";
 
+.button {
+	background-color: $primary-background-color;
+	color: white;
+	font-family: "DM Sans", Arial, Helvetica, sans-serif;
+	font-weight: 700;
+	font-size: 18px;
+	width: 170px;
+	height: 69px;
+	border-radius: 5px;
+	border: none;
+	text-align: center;
+	&--contact {
+		&:hover,
+		&:focus {
+			background-color: $secondary-background-color;
+			color: black;
+		}
+	}
+	&--content {
+		position: fixed;
+		right: 50%;
+		top: 0;
+		background-color: $secondary-background-color;
+		color: black;
+		height: 30px;
+		width: 182px;
+	}
+}
+
+.select {
+	margin: 20px;
+	&__label {
+		padding-right: 10px;
+		font-weight: 700;
+		font-size: 18px;
+	}
+}
+
+.photographers {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+	gap: 20px;
+}
+
+.photographer {
+	text-align: center;
+	&__name {
+		font-size: 36px;
+		font-weight: 400;
+		line-height: 47px;
+		color: $primary-text-color;
+	}
+	&__location {
+		font-size: 13px;
+		font-weight: 400;
+		line-height: 17px;
+		color: $secondary-text-color;
+	}
+	&__tagline {
+		font-size: 10px;
+		font-weight: 400;
+		line-height: 13px;
+		color: black;
+	}
+}
+
+.heart {
+	margin: 20px;
+	display: flex;
+	&__number {
+		font-size: 24px;
+		font-weight: 500;
+		line-height: 31px;
+		color: $secondary-text-color;
+		width: 30px;
+	}
+	&__icon {
+		padding: 5px;
+	}
+}
