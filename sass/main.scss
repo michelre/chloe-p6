@@ -15,6 +15,7 @@
 	border-radius: 5px;
 	border: none;
 	text-align: center;
+	cursor: pointer;
 	&--contact {
 		&:hover,
 		&:focus {
@@ -33,7 +34,7 @@
 	}
 }
 
-.select {
+.sort {
 	margin: 20px;
 	&__label {
 		padding-right: 10px;
@@ -83,4 +84,78 @@
 	&__icon {
 		padding: 5px;
 	}
+}
+
+//modal
+
+.form {
+	//display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgb(196, 196, 196, 0.5);
+	&__content {
+		margin: 5% auto;
+		padding: 30px;
+		max-width: 660px;
+		background: $secondary-background-color;
+		border-radius: 5px;
+		overflow: hidden;
+		position: relative;
+		box-shadow: -5px 10px 30px 0px rgba(0, 0, 0, 0.4);
+	}
+	&__closeX{
+			position: absolute;
+			right: 35px;
+			top: 35px;
+			width: 42px;
+			height: 42px;
+			opacity: 1;
+			cursor: pointer;
+			filter: invert(100%) sepia(93%) saturate(2%) hue-rotate(196deg) brightness(109%) contrast(100%);
+		//colorer le logo svg en blanc
+	}
+	&__title{
+		font-size: 64px;
+		font-weight: 400;
+		color: black;
+		line-height: 90px;
+	}
+	label {
+		font-size: 36px;
+		font-weight: 400;
+		color: $form-text-color;
+		display: inline-block;
+		margin-bottom: 11px;
+	}
+}
+.text-control {
+	border: none;
+	margin-bottom: 11px;
+	padding: 8px;
+	width: 100%;
+	font-size: 20px;
+	height: 48px;
+	border-radius: 5px;
+}
+.formData[data-error]::after {
+	content: attr(data-error);
+	font-size: 0.4em;
+	color: $secondary-text-color;
+	display: block;
+	margin-top: 7px;
+	margin-bottom: 7px;
+	text-align: right;
+	line-height: 0.3;
+	opacity: 0;
+	transition: 0.3s;
+}
+.formData[data-error-visible="true"]::after {
+	opacity: 1;
+}
+.formData[data-error-visible="true"] .text-control {
+	border: 2px solid $secondary-text-color;
 }
