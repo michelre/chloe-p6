@@ -13,6 +13,29 @@ fetch("FishEyeData.json")
 	});
 
 //DOM Elements
+const wrapper = document.querySelector("#js_Data");
+
+//Header
+const imgLogo = document.createElement("img");
+const linkLogo = document.createElement("a");
+const header = document.createElement("header");
+wrapper.appendChild(header).appendChild(linkLogo).appendChild(imgLogo);
+imgLogo.src = "img/logo.svg";
+imgLogo.alt = "Fisheye Home page";
+linkLogo.href = "index.html";
+
+//Nav
+const nav = document.createElement("nav");
+header.appendChild(nav);
+
+//Main
+const mainContainer = document.createElement("main");
+wrapper.appendChild(mainContainer);
+
+//Div photographers
+const photographerContainer = document.createElement("div");
+photographerContainer.classList.add("photographers");
+mainContainer.appendChild(photographerContainer);
 const photographersContainer = document.querySelector(".photographers");
 
 //Element - Photographers description
@@ -69,6 +92,20 @@ const incrementHeart = () => {
 };
 
 document.querySelector(".heart__icon").addEventListener("click", incrementHeart);
+
+//Element - dropdown
+const divSelect = document.createElement("div");
+divSelect.classList.add("select");
+divSelect.innerHTML =
+	"<label for='order by' class='select__label'>Trier par</label> <select name='Order by' id='tri' class='button button--select'> <option value='popularité'>Popularité</option> <option value='date'>Date</option><option value='titre'>Titre</option>";
+mainContainer.appendChild(divSelect);
+
+//Element - content button
+const contentButton = document.createElement("button");
+contentButton.classList.add("button--content");
+contentButton.classList.add("button");
+mainContainer.appendChild(contentButton);
+contentButton.textContent = "Passer au contenu";
 
 //Element - media
 //Element - Photographer header

@@ -89,7 +89,8 @@
 //modal
 
 .form {
-	//display: none;
+	&__background{
+	display: none;
 	position: fixed;
 	z-index: 1;
 	left: 0;
@@ -97,7 +98,8 @@
 	height: 100%;
 	width: 100%;
 	background-color: rgb(196, 196, 196, 0.5);
-	&__content {
+	};
+	&__modal {
 		margin: 5% auto;
 		padding: 30px;
 		max-width: 660px;
