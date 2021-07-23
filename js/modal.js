@@ -1,6 +1,6 @@
 // modal form HTML creation
 const mainContainer = document.querySelector(".mainContainer");
-mainContainer.innerHTML = `<div class="form__background">
+mainContainer.innerHTML += `<div class="form__background">
 		<div class="form__modal">
 			<img src="img/closeX.svg" class="form__closeX" />
 					<h1 class="form__title">Contactez-moi</h1>
