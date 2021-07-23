@@ -30,7 +30,7 @@ mainContainer.innerHTML = `<div class="form__background">
 				</div>`;
 
 // bouton launch modal HTML creation
-mainContainer.innerHTML = `<button class="button button--contact" alt="contact me">
+mainContainer.innerHTML += `<button class="button button--contact" alt="contact me">
 	Contactez-moi
 	</button>`;
 
@@ -44,7 +44,7 @@ const formBody = document.querySelector(".form__body");
 const firstNameForm = document.querySelector("#first");
 const lastNameForm = document.querySelector("#last");
 const emailForm = document.querySelector("#email");
-const messageForm = document.querySelector("#email");
+const messageForm = document.querySelector("#message");
 const submitBtn = document.querySelectorAll(".button--submit");
 
 // launch modal event
