@@ -71,35 +71,6 @@ const appendData = (foo) => {
 //Element - Photographers cards
 //Element - tag
 //Element - heart
-const heartIcon = document.createElement("img");
-heartIcon.classList.add("heart__icon");
-heartIcon.alt = "likes";
-
-const heartCompteur = document.createElement("div");
-heartCompteur.classList.add("heart__number");
-heartCompteur.textContent = 12;
-
-const heartContainer = document.createElement("div");
-heartContainer.classList.add("heart");
-photographersContainer.appendChild(heartContainer).appendChild(heartCompteur);
-heartContainer.appendChild(heartIcon);
-heartIcon.src = "img/heart.svg";
-
-const incrementHeart = () => {
-	let value = document.querySelector(".heart__number").innerHTML;
-	value++;
-	document.querySelector(".heart__number").innerHTML = value;
-};
-
-document.querySelector(".heart__icon").addEventListener("click", incrementHeart);
-
-//Element - dropdown
-const divSelect = document.createElement("div");
-divSelect.classList.add("select");
-divSelect.innerHTML =
-	"<label for='order by' class='select__label'>Trier par</label> <select name='Order by' id='tri' class='button button--select'> <option value='popularité'>Popularité</option> <option value='date'>Date</option><option value='titre'>Titre</option>";
-mainContainer.appendChild(divSelect);
-
 //Element - content button
 const contentButton = document.createElement("button");
 contentButton.classList.add("button--content");
