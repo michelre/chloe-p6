@@ -6,7 +6,6 @@ fetch("FishEyeData.json")
 	})
 	.then(function (data) {
 		console.log(data);
-		appendData(data.photographers);
 	})
 	.catch(function (err) {
 		console.log(err);
@@ -32,51 +31,9 @@ header.appendChild(nav);
 const mainContainer = document.createElement("main");
 wrapper.appendChild(mainContainer);
 
-//Div photographers
-const photographerContainer = document.createElement("div");
-photographerContainer.classList.add("photographers");
-mainContainer.appendChild(photographerContainer);
-const photographersContainer = document.querySelector(".photographers");
-
-//Element - Photographers description
-const appendData = (foo) => {
-	for (let i = 0; i < foo.length; i++) {
-		const divPhotographer = document.createElement("div");
-		divPhotographer.classList.add("photographer");
-		photographersContainer.appendChild(divPhotographer);
-
-		const namePhotographer = document.createElement("div");
-		namePhotographer.classList.add("photographer__name");
-		divPhotographer.appendChild(namePhotographer);
-		namePhotographer.textContent = foo[i].name;
-
-		const locationPhotographer = document.createElement("div");
-		locationPhotographer.classList.add("photographer__location");
-		divPhotographer.appendChild(locationPhotographer);
-		locationPhotographer.textContent = foo[i].city + ", " + foo[i].country;
-
-		const quotePhotographer = document.createElement("div");
-		quotePhotographer.classList.add("photographer__tagline");
-		divPhotographer.appendChild(quotePhotographer);
-		quotePhotographer.textContent = foo[i].tagline;
-
-		const tagPhotographer = document.createElement("span");
-		tagPhotographer.classList.add("photographer__tag");
-		divPhotographer.appendChild(tagPhotographer);
-		tagPhotographer.textContent = foo[i].tags;
-	}
-};
-
-//Element - Photographers picture
-//Element - Photographers cards
-//Element - tag
-//Element - heart
 //Element - content button
 const contentButton = document.createElement("button");
 contentButton.classList.add("button--content");
 contentButton.classList.add("button");
 mainContainer.appendChild(contentButton);
 contentButton.textContent = "Passer au contenu";
-
-//Element - media
-//Element - Photographer header
