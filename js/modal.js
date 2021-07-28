@@ -31,12 +31,12 @@ export const createForm =() =>{
 					</div>`;
 
 	// bouton launch modal HTML creation
-	mainContainer.innerHTML += `<button class="button button--contact" alt="contact me">
+	mainContainer.innerHTML += `<button class="button button--contact" alt="contact me" data-trigger="contact">
 		Contactez-moi
 		</button>`;
 
 	// DOM Elements
-	const modalBg = document.querySelector(".form__background");
+	//const modalBg = document.querySelector(".form__background");
 	const contactBtn = document.querySelectorAll(".button--contact");
 	const formData = document.querySelectorAll(".form__data");
 	const closeBtn = document.querySelectorAll(".form__closeX");
@@ -48,7 +48,12 @@ export const createForm =() =>{
 	const messageForm = document.querySelector("#message");
 	const submitBtn = document.querySelectorAll(".button--submit");
 
-	// launch modal event
+	// Délégation d'évènements
+	document.addEventListener('click', (e) => {
+		if(e.target.dataset.trigger === 'contact'){
+			launchModal()
+		}
+	})
 	contactBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
 	// close modal event
@@ -56,6 +61,8 @@ export const createForm =() =>{
 
 	// launch modal form
 	function launchModal() {
+		const modalBg = document.querySelector(".form__background");
+		console.log(modalBg)
 		modalBg.style.display = "block";
 	}
 
