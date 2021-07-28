@@ -51,6 +51,18 @@
 
 .photographer {
 	text-align: center;
+	&__link{
+		display:inline-block;
+	}
+	&__picture{
+		width: 200px;
+		height: 200px;
+		overflow: hidden;
+		border-radius: 200px;
+		img{
+			@include img-max;
+		}
+	}
 	&__name {
 		font-size: 36px;
 		font-weight: 400;
